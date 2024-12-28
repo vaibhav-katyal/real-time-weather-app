@@ -14,6 +14,7 @@ async function getWeatherData(city){
         document.querySelector(".temp").innerHTML = "--"+"°c";
         document.querySelector(".check_humidity").innerHTML = "--"+"%";
         document.querySelector(".check_wind").innerHTML = "--"+" km/h";
+        document.querySelector(".weather-type").innerHTML = "----"+" km/h";
     }
     else{
         const data = await response.json()
@@ -24,6 +25,7 @@ async function getWeatherData(city){
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp)+"°c";
         document.querySelector(".check_humidity").innerHTML = data.main.humidity+"%";
         document.querySelector(".check_wind").innerHTML = Math.round(data.wind.speed)+" km/h";
+        document.querySelector(".weather-type").innerHTML = data.weather[0].main;
 
         if(data.weather[0].main == "Clouds"){
             weatherIcon.src = "clouds.png"
