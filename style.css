@@ -21,6 +21,21 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    animation-name: loading-anim;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loading-anim{
+    from{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .search{
